@@ -21,7 +21,18 @@ namespace WebEntity.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            string res = "";
+            switch (id)
+            {
+                case 1:
+                    res = Actions.Cheques.AddNewCheque();
+                    break;
+                case 2:
+                    res = Actions.Cheques.GetAll();
+                    break;
+            }
+
+            return res;
         }
 
         // POST api/values
